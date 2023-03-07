@@ -60,13 +60,13 @@ public:
     {
         return category;
     }
-    void setCategory(const char* category)
+    void setCategory(const char* category_)
     {
-        delete[] this->category;
+        delete[] category;
 
-        size_t len = strlen(category);
-        this->category = new char[len + 1];
-        strcpy(this->category, category);
+        size_t len = strlen(category_);
+        category = new char[len + 1];
+        strcpy(category, category_);
     }
 
 
@@ -211,13 +211,13 @@ public:
     {
         return brand;
     }
-    void setBrand(const char* brand)
+    void setBrand(const char* brand_)
     {
-        delete[] this->brand;
+        delete[] brand;
 
-        size_t len = strlen(brand);
-        this->brand = new char[len + 1];
-        strcpy(this->brand, brand);
+        size_t len = strlen(brand_);
+        brand = new char[len + 1];
+        strcpy(brand, brand_);
     }
 
 
@@ -225,13 +225,13 @@ public:
     {
         return body;
     }
-    void setbody(const char* body)
+    void setbody(const char* body_)
     {
-        delete[] this->body;
+        delete[] body;
 
-        size_t len = strlen(body);
-        this->body = new char[len + 1];
-        strcpy(this->body, body);
+        size_t len = strlen(body_);
+        body = new char[len + 1];
+        strcpy(body, body_);
     }
 
     //////////////////////////
@@ -353,13 +353,13 @@ public:
     {
         return brand;
     }
-    void setBrand(const char* brand)
+    void setBrand(const char* brand_)
     {
-        delete[] this->brand;
+        delete[] brand;
 
-        size_t len = strlen(brand);
-        this->brand = new char[len + 1];
-        strcpy(this->brand, brand);
+        size_t len = strlen(brand_);
+        brand = new char[len + 1];
+        strcpy(brand, brand_);
     }
 
     //////////////////////////
@@ -469,13 +469,13 @@ public:
     {
         return brand;
     }
-    void setBrand(const char* brand)
+    void setBrand(const char* brand_)
     {
-        delete[] this->brand;
+        delete[] brand;
 
-        size_t len = strlen(brand);
-        this->brand = new char[len + 1];
-        strcpy(this->brand, brand);
+        size_t len = strlen(brand_);
+        brand = new char[len + 1];
+        strcpy(brand, brand_);
     }
 
 
@@ -483,13 +483,13 @@ public:
     {
         return key;
     }
-    void setKey(const char* key)
+    void setKey(const char* key_)
     {
-        delete[] this->key;
+        delete[] key;
 
-        size_t len = strlen(key);
-        this->key = new char[len + 1];
-        strcpy(this->key, key);
+        size_t len = strlen(key_);
+        key = new char[len + 1];
+        strcpy(key, key_);
     }
 
     //////////////////////////
