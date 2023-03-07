@@ -50,7 +50,7 @@ public:
     {
         return price;
     }
-    void setPrice(int price)
+    void setPrice(const int price)
     {
         this->price = price;
     }
@@ -74,7 +74,7 @@ public:
     {
         return stock;
     }
-    void setStock(int stock)
+    void setStock(const int stock)
     {
         this->stock = stock;
     }
@@ -201,7 +201,7 @@ public:
     {
         return stringsnr;
     }
-    void setStringsnr(int stringsnr)
+    void setStringsnr(const int stringsnr)
     {
         this->stringsnr = stringsnr;
     }
@@ -343,7 +343,7 @@ public:
     {
         return drumsnr;
     }
-    void setDrumsnr(int drumsnr)
+    void setDrumsnr(const int drumsnr)
     {
         this->drumsnr = drumsnr;
     }
@@ -556,7 +556,7 @@ public:
     Drums d[100];
     Keyboard k[100];
 
-    int i=1, ok=1;
+    int i=0, ok=1;
     void menu()
     {
         while(ok)
@@ -604,7 +604,7 @@ public:
             case 2:
             {
 
-                for(int j=1; j<=i; j++)
+                for(int j=0; j<i; j++)
                 {
                     if(strcmp(instr[j].category, "")!=0)
                         std::cout<<instr[j]<<endl;
@@ -620,7 +620,7 @@ public:
 
             case 3:
             {
-                for(int j=1; j<=i; j++)
+                for(int j=0; j<i; j++)
                     if(strcmp(g[j].brand, "")!=0)
                         std::cout<<g[j]<<endl;
 
@@ -629,7 +629,7 @@ public:
 
             case 4:
             {
-                for(int j=1; j<=i; j++)
+                for(int j=0; j<i; j++)
                     if(strcmp(d[j].brand, "")!=0)
                         std::cout<<d[j]<<endl;
 
@@ -638,7 +638,7 @@ public:
 
             case 5:
             {
-                for(int j=1; j<=i; j++)
+                for(int j=0; j<i; j++)
                     if(strcmp(k[j].brand, "")!=0)
                         std::cout<<k[j]<<endl;
 
