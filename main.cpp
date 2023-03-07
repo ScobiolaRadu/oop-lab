@@ -578,26 +578,56 @@ public:
             case 1:
             {
                 std::cin>>instr[i];
+
                 if(!strcmp(instr[i].category, "guitar"))
                 {
                     std::cin>>g[i];
+                    for(int j=0; j<i; j++)
+                    {
+                        if(instr[i] == instr[j] && g[i] == g[j])
+                        {
+                            cout<<"-----"<<endl<<"Already existing item"<<endl<<"-----"<<endl;
+                            i--;
+                            break;
+                        }
+                    }
                     i++;
                 }
                 else if(!strcmp(instr[i].category, "drums"))
                 {
                     std::cin>>d[i];
+                    for(int j=0; j<i; j++)
+                    {
+                        if(instr[i] == instr[j] && d[i] == d[j])
+                        {
+                            cout<<"-----"<<endl<<"Already existing item"<<endl<<"-----"<<endl;
+                            i--;
+                            break;
+                        }
+                    }
                     i++;
                 }
 
                 else if(!strcmp(instr[i].category, "keyboard"))
                 {
                     std::cin>>k[i];
+                    for(int j=0; j<i; j++)
+                    {
+                        if(instr[i] == instr[j] && k[i] == k[j])
+                        {
+                            cout<<"-----"<<endl<<"Already existing item"<<endl<<"-----"<<endl;
+                            i--;
+                            break;
+                        }
+                    }
                     i++;
                 }
 
                 else
-                    cout<<"Inexistent category name. Check spelling."<<endl;
-
+                {
+                    cout<<"-----"<<endl<<"Inexistent category name. Check spelling."<<endl<<"-----"<<endl;
+                    break;
+                }
                 break;
             }
 
