@@ -50,9 +50,9 @@ public:
     {
         return price;
     }
-    void setPrice(const int price)
+    void setPrice(const int price_)
     {
-        this->price = price;
+        price = price_;
     }
 
 
@@ -74,9 +74,9 @@ public:
     {
         return stock;
     }
-    void setStock(const int stock)
+    void setStock(const int stock_)
     {
-        this->stock = stock;
+        stock = stock_;
     }
     //////////////////////////
 
@@ -201,9 +201,9 @@ public:
     {
         return stringsnr;
     }
-    void setStringsnr(const int stringsnr)
+    void setStringsnr(const int stringsnr_)
     {
-        this->stringsnr = stringsnr;
+        stringsnr = stringsnr_;
     }
 
 
@@ -343,9 +343,9 @@ public:
     {
         return drumsnr;
     }
-    void setDrumsnr(const int drumsnr)
+    void setDrumsnr(const int drumsnr_)
     {
-        this->drumsnr = drumsnr;
+        drumsnr = drumsnr_;
     }
 
 
