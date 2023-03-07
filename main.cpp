@@ -15,7 +15,7 @@ public:
     {
         this -> price = 0;
         this -> stock = 0;
-        this -> category = new char[0];
+        this -> category = strdup("");
     }
 
     //constructor cu argumente
@@ -154,8 +154,8 @@ public:
 
     Guitar()
     {
-        this -> brand = new char[0];
-        this -> body = new char[0];
+        this -> brand = strdup("");
+        this -> body = strdup("");
         this -> stringsnr = 0;
     }
 
@@ -306,7 +306,7 @@ public:
 
     Drums()
     {
-        this -> brand = new char[0];
+        this -> brand = strdup("");
         this -> drumsnr = 0;
     }
 
@@ -427,8 +427,8 @@ public:
 
     Keyboard()
     {
-        this -> brand = new char[0];
-        this -> key = new char[0];
+        this -> brand = strdup("");
+        this -> key = strdup("");
     }
 
     //constructor cu argumente
