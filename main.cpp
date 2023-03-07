@@ -62,7 +62,7 @@ public:
     }
     void setCategory(const char* category_)
     {
-        if (category) delete[] category;
+        if (strcmp(category, "")!=0) delete[] category;
 
         size_t len = strlen(category_);
         category = new char[len + 1];
@@ -213,7 +213,7 @@ public:
     }
     void setBrand(const char* brand_)
     {
-        if(brand) delete[] brand;
+        if(strcmp(brand, "")!=0) delete[] brand;
 
         size_t len = strlen(brand_);
         brand = new char[len + 1];
@@ -227,7 +227,7 @@ public:
     }
     void setbody(const char* body_)
     {
-        if(body) delete[] body;
+        if(strcmp(body, "")!=0) delete[] body;
 
         size_t len = strlen(body_);
         body = new char[len + 1];
@@ -355,7 +355,7 @@ public:
     }
     void setBrand(const char* brand_)
     {
-        if(brand) delete[] brand;
+        if(strcmp(brand, "")!=0) delete[] brand;
 
         size_t len = strlen(brand_);
         brand = new char[len + 1];
@@ -471,7 +471,7 @@ public:
     }
     void setBrand(const char* brand_)
     {
-        if(brand) delete[] brand;
+        if(strcmp(brand, "")!=0) delete[] brand;
 
         size_t len = strlen(brand_);
         brand = new char[len + 1];
@@ -485,7 +485,7 @@ public:
     }
     void setKey(const char* key_)
     {
-        if(key) delete[] key;
+        if(strcmp(key, "")!=0) delete[] key;
 
         size_t len = strlen(key_);
         key = new char[len + 1];
