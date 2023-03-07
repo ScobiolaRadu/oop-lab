@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string.h>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ public:
     {
         price = 0;
         stock = 0;
-        category = "";
+        category = strdup("");
     }
 
     //constructor cu argumente
@@ -148,10 +149,11 @@ class Guitar
 
 public:
     //constructor fara argumente
+
     Guitar()
     {
-        brand = "";
-        body = "";
+        brand = strdup("");
+        body = strdup("");
         stringsnr = 0;
     }
 
@@ -298,9 +300,10 @@ class Drums
 
 public:
     //constructor fara argumente
+
     Drums()
     {
-        brand = "";
+        brand = strdup("");
         drumsnr = 0;
     }
 
@@ -414,12 +417,13 @@ class Keyboard
     char* brand;
     char* key;
 
-    public:
+public:
     //constructor fara argumente
+
     Keyboard()
     {
-        brand = "";
-        key = "";
+        brand = strdup("");
+        key = strdup("");
     }
 
     //constructor cu argumente
@@ -624,7 +628,7 @@ public:
                     if(strcmp(d[j].brand, "")!=0)
                         std::cout<<d[j]<<endl;
 
-                    break;
+                break;
             }
 
             case 5:
@@ -633,7 +637,7 @@ public:
                     if(strcmp(k[j].brand, "")!=0)
                         std::cout<<k[j]<<endl;
 
-                    break;
+                break;
             }
 
             case 6:
