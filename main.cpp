@@ -13,9 +13,9 @@ public:
     //constructor fara argumente
     Instrument()
     {
-        price = 0;
-        stock = 0;
-        category = strdup("");
+        this -> price = 0;
+        this -> stock = 0;
+        this -> category = strdup("");
     }
 
     //constructor cu argumente
@@ -46,7 +46,7 @@ public:
 
 
     //get si set//
-    int getPrice()
+    int getPrice() const
     {
         return price;
     }
@@ -70,7 +70,7 @@ public:
     }
 
 
-    int getStock()
+    int getStock() const
     {
         return stock;
     }
@@ -108,11 +108,14 @@ public:
     //operator >>
     friend std::istream& operator>>(std::istream &is, Instrument &instr)
     {
+        int x;
         cout<<"Insert price: ";
-        is>>instr.price;
+        is>>x;
+        instr.setPrice(x);
         cout<<endl;
         cout<<"Insert amount in stock: ";
-        is>>instr.stock;
+        is>>x;
+        instr.setStock(x);
         cout<<endl;
 
         char buf[100];
@@ -125,11 +128,10 @@ public:
     }
 
     //operator <<
-    friend std::ostream& operator<<(std::ostream &os, Instrument &instr)
+    friend std::ostream& operator<<(std::ostream &os, const Instrument &instr)
     {
-        os<<"Price: "<<instr.price<<" "<<"Amount in stock: "<<instr.stock<<" "<<"Category: "<<instr.category<<endl;
+        os<<"Price: "<<instr.getPrice()<<" "<<"Amount in stock: "<<instr.getStock()<<" "<<"Category: "<<instr.getCategory()<<endl;
         return os;
-
     }
 
     //clasele friend
@@ -152,9 +154,9 @@ public:
 
     Guitar()
     {
-        brand = strdup("");
-        body = strdup("");
-        stringsnr = 0;
+        this -> brand = strdup("");
+        this -> body = strdup("");
+        this -> stringsnr = 0;
     }
 
     //constructor cu argumente
@@ -195,7 +197,7 @@ public:
 
 
     //get si set//
-    int getStringsnr()
+    int getStringsnr() const
     {
         return stringsnr;
     }
@@ -274,19 +276,20 @@ public:
         g.setbody(buf2);
         cout<<endl;
 
+        int x;
         cout<<"Insert number of strings: ";
-        is >> g.stringsnr;
+        is >> x;
+        g.setStringsnr(x);
         cout<<endl;
 
         return is;
     }
 
     //operator <<
-    friend std::ostream& operator<<(std::ostream &os, Guitar &g)
+    friend std::ostream& operator<<(std::ostream &os, const Guitar &g)
     {
-        os<<"Brand: "<<g.brand<<" "<<"body: "<<g.body<<" "<<"Number of strings: "<<g.stringsnr<<endl;
+        os<<"Brand: "<<g.getBrand()<<" "<<"body: "<<g.getbody()<<" "<<"Number of strings: "<<g.getStringsnr()<<endl;
         return os;
-
     }
 
     friend class InteractiveMenu;
@@ -303,8 +306,8 @@ public:
 
     Drums()
     {
-        brand = strdup("");
-        drumsnr = 0;
+        this -> brand = strdup("");
+        this -> drumsnr = 0;
     }
 
     //constructor cu argumente
@@ -336,7 +339,7 @@ public:
 
 
     //get si set//
-    int getDrumssnr()
+    int getDrumsnr() const
     {
         return drumsnr;
     }
@@ -394,17 +397,19 @@ public:
         g.setBrand(buf);
         cout<<endl;
 
+        int x;
         cout<<"Insert number of drums: ";
-        is >> g.drumsnr;
+        is >> x;
+        g.setDrumsnr(x);
         cout<<endl;
 
         return is;
     }
 
     //operator <<
-    friend std::ostream& operator<<(std::ostream &os, Drums &g)
+    friend std::ostream& operator<<(std::ostream &os, const Drums &g)
     {
-        os<<"Brand: "<<g.brand<<" "<<"Number of drums: "<<g.drumsnr<<endl;
+        os<<"Brand: "<<g.getBrand()<<" "<<"Number of drums: "<<g.getDrumsnr()<<endl;
         return os;
 
     }
@@ -422,8 +427,8 @@ public:
 
     Keyboard()
     {
-        brand = strdup("");
-        key = strdup("");
+        this -> brand = strdup("");
+        this -> key = strdup("");
     }
 
     //constructor cu argumente
@@ -532,9 +537,9 @@ public:
     }
 
     //operator <<
-    friend std::ostream& operator<<(std::ostream &os, Keyboard &g)
+    friend std::ostream& operator<<(std::ostream &os, const Keyboard &g)
     {
-        os<<"Brand: "<<g.brand<<" "<<"key: "<<g.key<<endl;
+        os<<"Brand: "<<g.getBrand()<<" "<<"key: "<<g.getKey()<<endl;
         return os;
 
     }
