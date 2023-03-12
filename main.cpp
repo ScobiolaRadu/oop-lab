@@ -10,15 +10,17 @@ class Instrument
     char *category;
 
 public:
-    //constructor fara argumente
+    //constructor fara parametri
     Instrument()
     {
         this -> price = 0;
         this -> stock = 0;
-        this -> category = strdup("");
+        size_t len = strlen("none");
+        this -> category = new char[len + 1];
+        strcpy(this -> category, "none");
     }
 
-    //constructor cu argumente
+    //constructor cu parametri
     Instrument(int price, int stock, const char* category)
     {
         this->price = price;
@@ -150,16 +152,22 @@ class Guitar
     int stringsnr;
 
 public:
-    //constructor fara argumente
+    //constructor fara parametri
 
     Guitar()
     {
-        this -> brand = strdup("");
-        this -> body = strdup("");
+        size_t len = strlen("none");
+        this -> brand = new char[len + 1];
+        strcpy(this -> brand, "none");
+
+        size_t len2 = strlen("none");
+        this -> body = new char[len2 + 1];
+        strcpy(this -> body, "none");
+
         this -> stringsnr = 0;
     }
 
-    //constructor cu argumente
+    //constructor cu parametri
     Guitar(const char* brand, const char* body, int stringsnr)
     {
         size_t len = strlen(brand);
@@ -302,15 +310,18 @@ class Drums
     int drumsnr;
 
 public:
-    //constructor fara argumente
+    //constructor fara parametri
 
     Drums()
     {
-        this -> brand = strdup("");
+        size_t len = strlen("none");
+        this -> brand = new char[len + 1];
+        strcpy(this -> brand, "none");
+
         this -> drumsnr = 0;
     }
 
-    //constructor cu argumente
+    //constructor cu parametri
     Drums(const char* brand, int drumsnr)
     {
         size_t len = strlen(brand);
@@ -423,15 +434,20 @@ class Keyboard
     char* key;
 
 public:
-    //constructor fara argumente
+    //constructor fara parametri
 
     Keyboard()
     {
-        this -> brand = strdup("");
-        this -> key = strdup("");
+        size_t len = strlen("none");
+        this -> brand = new char[len + 1];
+        strcpy(this -> brand, "none");
+
+        size_t len2 = strlen("none");
+        this -> key = new char[len2 + 1];
+        strcpy(this -> key, "none");
     }
 
-    //constructor cu argumente
+    //constructor cu parametri
     Keyboard(const char* brand, const char* key)
     {
         size_t len = strlen(brand);
@@ -550,7 +566,6 @@ public:
 class InteractiveMenu
 {
 public:
-
     Instrument instr[100];
     Guitar g[100];
     Drums d[100];
@@ -636,7 +651,7 @@ public:
 
                 for(int j=0; j<i; j++)
                 {
-                    if(strcmp(instr[j].category, "")!=0)
+                    if(strcmp(instr[j].category, "none")!=0)
                         std::cout<<instr[j]<<endl;
                     if(!strcmp(instr[j].category, "guitar"))
                         std::cout<<g[j]<<endl<<"-----"<<endl;
@@ -651,7 +666,7 @@ public:
             case 3:
             {
                 for(int j=0; j<i; j++)
-                    if(strcmp(g[j].brand, "")!=0)
+                    if(strcmp(g[j].brand, "none")!=0)
                         std::cout<<g[j]<<endl;
 
                 break;
@@ -660,7 +675,7 @@ public:
             case 4:
             {
                 for(int j=0; j<i; j++)
-                    if(strcmp(d[j].brand, "")!=0)
+                    if(strcmp(d[j].brand, "none")!=0)
                         std::cout<<d[j]<<endl;
 
                 break;
@@ -669,7 +684,7 @@ public:
             case 5:
             {
                 for(int j=0; j<i; j++)
-                    if(strcmp(k[j].brand, "")!=0)
+                    if(strcmp(k[j].brand, "none")!=0)
                         std::cout<<k[j]<<endl;
 
                 break;
